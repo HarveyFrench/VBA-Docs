@@ -158,10 +158,7 @@ Error_MayCauseAnError:
         . 
     Else 
         ' Regenerate original error. 
-        Dim intErrNum As Integer 
-        intErrNum = Err 
-        Err.Clear 
-        Err.Raise intErrNum 
+        Err.Raise Err.Number, Err.Source, Err.Description
     End If 
     ' Resume execution with exit routine to exit function. 
     Resume Exit_MayCauseAnError 
